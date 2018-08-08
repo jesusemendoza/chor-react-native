@@ -59,12 +59,12 @@ export const MainAppTabs = createBottomTabNavigator({
   Discover: {
     screen: Discover,
     navigationOptions: {
-      tabBarLabel: 'Discover',
+      tabBarLabel: 'Chors',
       tabBarIcon:({ focused })=> {
         return (
         <Image
         style={{ width: 19, height: 30 }}
-        source={(focused) ? require('../assets/tabbar-assets/discover-tab-selected.png') : require('../assets/tabbar-assets/discover-tab.png')} />
+        source={(focused) ? require('../assets/images/chor-pressed.png') : require('../assets/images/chor-not-pressed.png')} />
       )},
     
     },
@@ -85,7 +85,7 @@ export const MainAppTabs = createBottomTabNavigator({
   Feed: {
     screen: Feed,
     navigationOptions: {
-      tabBarLabel: 'Feed',
+      tabBarLabel: 'Messages',
       tabBarIcon:({ focused })=> {
         return (
         <Image
@@ -98,12 +98,12 @@ export const MainAppTabs = createBottomTabNavigator({
   MyMusic: {
     screen: MyMusic,
     navigationOptions: {
-      tabBarLabel: 'MyMusic',
+      tabBarLabel: 'Home',
       tabBarIcon:({ focused })=> {
         return (
         <Image
         style={{ width: 18, height: 26 }}
-        source={(focused) ? require('../assets/tabbar-assets/my-music-tab-selected.png') : require('../assets/tabbar-assets/my-music-tab.png')} />
+        source={(focused) ? require('../assets/images/chor-logo.png') : require('../assets/images/chor-logo.png')} />
       )},
      
     },
@@ -111,12 +111,12 @@ export const MainAppTabs = createBottomTabNavigator({
   Playlist: {
     screen: TestSaga,
     navigationOptions: {
-      tabBarLabel: 'Playlist',
+      tabBarLabel: 'My Trophies',
       tabBarIcon:({ focused })=> {
         return (
         <Image
         style={{ width: 22, height: 25 }}
-        source={(focused) ? require('../assets/tabbar-assets/playlist-tab-selected.png') : require('../assets/tabbar-assets/playlist-tab.png')} />
+        source={(focused) ? require('../assets/tabbar-assets/my-music-tab-selected.png') : require('../assets/tabbar-assets/my-music-tab-selected.png')} />
       )},
     
     },

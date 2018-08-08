@@ -7,22 +7,21 @@ export default class Home extends React.Component {
       <View style={styles.container}>
         
       <Image
-          source={require('../assets/images/logo.png')}
+          source={require('../assets/images/chor-logo.png')}
           />
-          <Text style={styles.titleText}>Chor</Text>
-          <Text style={styles.logoText}>Roomate tasks </Text>
+         
           <View style={{position: 'absolute', bottom:0, display: 'flex', flexDirection: 'row', height: '10%', width: '100%'}} >
             <TouchableOpacity 
             onPress={() => this.props.navigation.navigate('Login')}
 
             style={{...styles.button, backgroundColor: 'black'}} >
             <Text 
-              style={{...styles.buttonText, color: 'white'}}
+              style={{...styles.buttonText, color: '#429a1b'}}
               >LOGIN</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('SignUp')}
-              style={{...styles.button, backgroundColor: '#E2FF00'}}
+              style={{...styles.button, backgroundColor: '#429a1b'}}
               >
               <Text
               onPress={() => this.props.navigation.navigate('SignUp')}
@@ -43,17 +42,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     backgroundColor: '#000'
   },
-  titleText: {
-    paddingTop:20,
-    fontSize: 50,
-    fontWeight: 'bold',
-    color: 'white'
-  },
-    logoText: {
-    paddingBottom: 100,
-      fontSize: 26,
-      color: 'white'
-    },
+  
     button: {
       flex: 1, 
       alignItems: 'center',

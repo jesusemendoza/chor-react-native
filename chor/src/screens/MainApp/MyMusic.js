@@ -13,8 +13,8 @@ export default class Discover extends Component {
   render() {
     return (
       <SafeAreaView Style={{height: '100%', width: '100%'}}>
-        <Text style={{fontSize: 100}}>MyMusic</Text>
-      </SafeAreaView>
+      <Text style={{fontSize: 25, textAlign: 'center'}}>My trophy Room</Text>
+    </SafeAreaView>
     );
   }
 }
