@@ -28,8 +28,6 @@ export default class LoginForm extends React.Component {
           autoCapitalize = "none"
           secureTextEntry
           autoCorrect={false}
-          
-
           />
 
           <View style={styles.buttonContainer}>
@@ -64,14 +62,14 @@ const styles = StyleSheet.create({
   header: {
     flex: 1,
     fontSize: 12,
-    color: '#E2FF00',
+    color: '#429a1b',
     height:30,
     paddingBottom:10
 
   },
   textInput: {
     alignSelf: 'stretch',
-    color: '#E2FF00',
+    color: '#429a1b',
     fontSize: 20
     
   },
@@ -84,7 +82,7 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: 'black',
+    backgroundColor: '#429a1b',
     marginTop: 40,
     fontSize:25
   },

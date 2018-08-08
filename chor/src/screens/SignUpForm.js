@@ -25,7 +25,7 @@ export default class SignUpForm extends React.Component {
       <TextInput 
       style={styles.textInput} 
       autoCorrect={false} 
-      // autoCapitalize = 'none'
+      autoCapitalize = 'none'
       placeholder="Name"
       />
 
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     height: '100%',
     width: '100%',
-    backgroundColor: 'white',
+    backgroundColor: 'black',
     alignItems: 'center',
   },
   signUpContentContainer: {
@@ -88,14 +88,14 @@ const styles = StyleSheet.create({
   },
   header: {
     fontSize: 10,
-    color: 'black',
+    color: '#429a1b',
     paddingTop: 20,
   
   },
   textInput: {
     alignSelf: 'stretch',
     height: 40,
-    color: 'black',
+    color: '#429a1b',
     fontSize: 10,
    
   },
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: '#E2FF00',
+    backgroundColor: '#429a1b',
     marginTop: 100,
     fontSize:20
   }

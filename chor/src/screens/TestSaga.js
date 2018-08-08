@@ -16,9 +16,9 @@ const TestSaga = (props)=> {
 
  return (
    <View style={container}>
-    <Text style={text}>My Playlist</Text>
+    <Text style={text}>My Trophies</Text>
     <TouchableHighlight style={{...button, width:100}}onPress={()=> props.fetchData()}>
-    <Text style={buttonText}>My Albums</Text>
+    <Text style={buttonText}>My Trophies</Text>
     
     </TouchableHighlight>
     <View style={mainContent}>
@@ -29,7 +29,8 @@ const TestSaga = (props)=> {
       props.appData.data.length ? (
         props.appData.data.map((person, i)=>{
           return <View key={i}>
-          <Text>Song Name: {person.name} Duration: {person.age}</Text>
+          <Text>Chor Do-er: {person.name} </Text>
+         <Text>Times Won: {person.age}</Text>
           </View>
         })
       ) : null
@@ -51,7 +52,7 @@ styles = StyleSheet.create({
     margin: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#E2FF00'
+    backgroundColor: '#429a1b'
   },
   buttonText: {
     color: 'black'
