@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchData } from '../actions/actions';
+import { login } from '../actions/user';
 import {
    StyleSheet, 
    Text, 
@@ -8,8 +11,13 @@ import {
    TouchableOpacity   } 
    from 'react-native';
 
-export default class LoginForm extends React.Component {
+class LoginForm extends Component {
+    loginHandler = () => {
+        console.tron.log(':props, loginHandler')
+        this.props.login();
+    }
   render() {
+    console.tron.log(this.props, ':props, login')
     return (
       <SafeAreaView style={styles.LoginForm}>
         <View style={styles.LoginContentContainer}>
@@ -32,7 +40,7 @@ export default class LoginForm extends React.Component {
 
           <View style={styles.buttonContainer}>
             <TouchableOpacity 
-            onPress={() => this.props.navigation.navigate('MainApp')}
+            onPress={() => this.loginHandler()}
             style={styles.button} >
             <Text style={styles.buttonText}>LOGIN</Text>
             </TouchableOpacity>
@@ -91,3 +99,19 @@ const styles = StyleSheet.create({
     fontWeight: '700'
   }
 });
+
+function mapStateToProps (state) {
+    return {
+      appData: state
+    }
+  }
+  function mapDispatchToProps(dispatch){
+    return{
+      fetchData: () => dispatch(fetchData()),
+      login: () => dispatch(login()),
+    }
+  }
+  export default connect (
+    mapStateToProps,
+    mapDispatchToProps
+  )(LoginForm)
