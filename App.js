@@ -3,14 +3,20 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import { Root } from './src/config/router'
 import configureStore from './src/config/configureStore';
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react'
 
-const store = configureStore()
+
+const configuredStore = configureStore()
+
+const { store, persistor } = configuredStore;
 
 export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-      <Root />
+        <PersistGate loading={null} persistor={persistor}>
+          <Root />
+        </PersistGate>  
       </Provider>
     
     );
