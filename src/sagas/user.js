@@ -4,8 +4,9 @@ import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { ActionTypes } from '../utils/constants';
 
 
-export function* login() {
+export function* login(action) {
   try {
+    const { email, password } = action.payload; 
     const requestObject = {  
         method: 'POST',
         headers: {
@@ -13,9 +14,10 @@ export function* login() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          'email': 'je.mendoza@live.com',
-          'password': 'pony123',
+          'email': email,
+          'password': password,
         })}
+    // console.tron.log(email,' : ', password,' : email, password login-saga')    
     let response = yield call(fetch, 'http://localhost:4000/api/v1/auth/login', requestObject)
     let json = yield response.json();
 

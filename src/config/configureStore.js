@@ -16,7 +16,7 @@ const persistConfig = {
     storage,
   }
   
-  const persistedReducer = persistReducer(persistConfig, rootReducer)
+const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 export default function configureStore() {
   const store = Reactotron.createStore(persistedReducer, applyMiddleware(sagaMiddleware))

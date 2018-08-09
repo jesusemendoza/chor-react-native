@@ -12,12 +12,21 @@ import {
    from 'react-native';
 
 class LoginForm extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            email: '',
+            password: '',
+        }
+    }
     loginHandler = () => {
         console.tron.log(':props, loginHandler')
-        this.props.login();
+        console.tron.log(this.state, ':state, loginHandler')
+        const { email, password } = this.state;
+        this.props.login({ email, password });
     }
   render() {
-    console.tron.log(this.props, ':props, login')
     return (
       <SafeAreaView style={styles.LoginForm}>
         <View style={styles.LoginContentContainer}>
@@ -27,6 +36,7 @@ class LoginForm extends Component {
           autoCorrect={false} 
           autoCapitalize = "none"
           placeholder="email@yahoo.com"
+          onChangeText={(email) => this.setState({ email })}
           />
     
           <Text style={styles.header}>Password</Text>
@@ -36,6 +46,8 @@ class LoginForm extends Component {
           autoCapitalize = "none"
           secureTextEntry
           autoCorrect={false}
+          onChangeText={(password) => this.setState({ password })}
+
           />
 
           <View style={styles.buttonContainer}>
@@ -65,7 +77,7 @@ const styles = StyleSheet.create({
     padding: 30,
     height: '50%',
     alignSelf: 'stretch',
-    backgroundColor: '#000'
+    backgroundColor: '#fff'
   },
   header: {
     flex: 1,
@@ -108,7 +120,7 @@ function mapStateToProps (state) {
   function mapDispatchToProps(dispatch){
     return{
       fetchData: () => dispatch(fetchData()),
-      login: () => dispatch(login()),
+      login: (loginObject) => dispatch(login(loginObject)),
     }
   }
   export default connect (

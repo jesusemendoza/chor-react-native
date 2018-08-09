@@ -18,7 +18,6 @@ export default class App extends Component {
           <Root />
         </PersistGate>  
       </Provider>
-    
     );
   }
 }
