@@ -19,11 +19,6 @@ export function* login() {
     let response = yield call(fetch, 'http://localhost:4000/api/v1/auth/login', requestObject)
     let json = yield response.json();
 
-    
-    console.tron.log(json,':json, login saga')
-
-
-
     yield put({
       type: ActionTypes.USER_LOGIN_SUCCESS,
       payload: {token: json.token, user: json.user},
