@@ -18,17 +18,38 @@ class LoginForm extends Component {
         this.state = {
             email: '',
             password: '',
+            loading: 'true',
         }
     }
     loginHandler = () => {
-        console.tron.log(':props, loginHandler')
-        console.tron.log(this.state, ':state, loginHandler')
         const { email, password } = this.state;
         this.props.login({ email, password });
     }
+    authCheck = () => {
+        if (this.props.appState.user.isAuthenticated === true) {
+            return this.props.navigation.navigate('MainApp')  
+        } else {
+            this.setState({loading: false})
+        }
+    }
+    componentWillMount = () => {
+        this.authCheck();
+    }
+
+    componentDidUpdate = () => {
+        if (this.props.appState.user.isAuthenticated === true) {
+            return this.props.navigation.navigate('MainApp')  
+        }
+    }
+
+     
+
   render() {
+    console.tron.log(this.props, 'props, login render')
     return (
-      <SafeAreaView style={styles.LoginForm}>
+      (this.state.loading)  
+      ?(<SafeAreaView><Text>Loading .....</Text></SafeAreaView>)  
+      :(<SafeAreaView style={styles.LoginForm}>
         <View style={styles.LoginContentContainer}>
           <Text style={styles.header}>Email</Text>
           <TextInput 
@@ -58,7 +79,7 @@ class LoginForm extends Component {
             </TouchableOpacity>
           </View>
         </View>
-        </SafeAreaView>
+        </SafeAreaView>)
     );
   }
 }
@@ -114,7 +135,7 @@ const styles = StyleSheet.create({
 
 function mapStateToProps (state) {
     return {
-      appData: state
+      appState: state
     }
   }
   function mapDispatchToProps(dispatch){

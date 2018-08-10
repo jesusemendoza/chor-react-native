@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image } from 'react-native'
-import { StackNavigator, createBottomTabNavigator } from 'react-navigation';
+import { StackNavigator, createBottomTabNavigator, createSwitchNavigator } from 'react-navigation';
 
 //landing Stack
 import Home from '../screens/Home';
@@ -135,14 +135,23 @@ export const MainAppTabs = createBottomTabNavigator({
 //   },
 // });
 
-export const Root = StackNavigator({
-  Landing: {
-    screen: LandingStack,
-    },
-  MainApp: {
-    screen: MainAppTabs,
-    },  
-}, {
-  mode: 'modal',
-  headerMode: 'none',
-});
+// export const Root = StackNavigator({
+//   Landing: {
+//     screen: LandingStack,
+//     },
+//   MainApp: {
+//     screen: MainAppTabs,
+//     },  
+// }, {
+//   mode: 'modal',
+//   headerMode: 'none',
+// });
+
+export const Root = createSwitchNavigator({
+    Landing: LandingStack,
+    MainApp: MainAppTabs, 
+  }, {
+    initialRouteName: 'Landing',  
+    mode: 'modal',
+    headerMode: 'none',
+  });

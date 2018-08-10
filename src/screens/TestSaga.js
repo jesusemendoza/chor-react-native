@@ -2,6 +2,7 @@ import React from 'react';
 import {TouchableHighlight, View, Text, StyleSheet } from 'react-native'
 import { connect } from 'react-redux';
 import { fetchData } from '../actions/actions';
+import { logOut } from '../actions/user';
 
 let styles 
 const TestSaga = (props)=> {
@@ -14,10 +15,20 @@ const TestSaga = (props)=> {
   } = styles
  console.tron.log(props, ':props')
 
+ logoutHandler = (props) => {
+     props.logOut()
+     setTimeout(((() => {
+         props.navigation.navigate('Landing');
+     })),1000)
+ }
+
  return (
    <View style={container}>
+    <TouchableHighlight style={{...button, width:100}} onPress={()=> logoutHandler(props)}>
+     <Text style={buttonText}>LogOut</Text>
+    </TouchableHighlight>
     <Text style={text}>My Trophies</Text>
-    <TouchableHighlight style={{...button, width:100}}onPress={()=> props.fetchData()}>
+    <TouchableHighlight style={{...button, width:100}} onPress={()=> props.fetchData()}>
     <Text style={buttonText}>My Trophies</Text>
     
     </TouchableHighlight>
@@ -69,7 +80,8 @@ function mapStateToProps (state) {
 }
 function mapDispatchToProps(dispatch){
   return{
-    fetchData: ()=> dispatch(fetchData())
+    fetchData: ()=> dispatch(fetchData()),
+    logOut: ()=> dispatch(logOut())
   }
 }
 export default connect (

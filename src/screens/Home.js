@@ -1,7 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Button, TouchableOpacity } from 'react-native';
+import { connect } from 'react-redux';
 
-export default class Home extends React.Component {
+class Home extends React.Component {
+    authCheck = () => {
+        if (this.props.appState.user.isAuthenticated === true) {
+            return this.props.navigation.navigate('MainApp')  
+        } else {
+            this.setState({loading: false})
+        }
+    }
+    componentWillMount = () => {
+        this.authCheck();
+    }  
   render() {
     return (
       <View style={styles.container}>
@@ -53,3 +64,13 @@ const styles = StyleSheet.create({
       fontWeight:'700',
     },
 });
+
+function mapStateToProps (state) {
+    return {
+      appState: state
+    }
+  }
+
+  export default connect (
+    mapStateToProps,
+  )(Home)
