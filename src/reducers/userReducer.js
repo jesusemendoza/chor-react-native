@@ -1,6 +1,6 @@
 import immutable from 'immutability-helper';
-import { createReducer } from '../utils/helpers';
 
+import { createReducer } from '../utils/helpers';
 import { ActionTypes } from '../utils/constants';
 
 export const userState = {
