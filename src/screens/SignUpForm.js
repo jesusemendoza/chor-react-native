@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     height: '100%',
     width: '100%',
-    backgroundColor: 'black',
+    backgroundColor: '#FCFCFC',
     alignItems: 'center',
   },
   signUpContentContainer: {
@@ -88,14 +88,14 @@ const styles = StyleSheet.create({
   },
   header: {
     fontSize: 10,
-    color: '#429a1b',
+    color: '#59B78D',
     paddingTop: 20,
   
   },
   textInput: {
     alignSelf: 'stretch',
     height: 40,
-    color: '#429a1b',
+    color: '#363732',
     fontSize: 10,
    
   },
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: '#429a1b',
+    backgroundColor: '#59B78D',
     marginTop: 100,
     fontSize:20
   }
