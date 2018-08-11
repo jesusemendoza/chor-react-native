@@ -19,7 +19,7 @@ const TestSaga = (props)=> {
      props.logOut()
      setTimeout(((() => {
          props.navigation.navigate('Landing');
-     })),1000)
+     })),400)
  }
 
  return (
@@ -34,11 +34,11 @@ const TestSaga = (props)=> {
     </TouchableHighlight>
     <View style={mainContent}>
     {
-      props.appData.isFetching && <Text>Loading</Text>
+      props.appState.appData.isFetching && <Text>Loading</Text>
     }
     {
-      props.appData.data.length ? (
-        props.appData.data.map((person, i)=>{
+      props.appState.appData.data.length ? (
+        props.appState.appData.data.map((person, i)=>{
           return <View key={i}>
           <Text>Chor Do-er: {person.name} </Text>
          <Text>Times Won: {person.age}</Text>
@@ -75,7 +75,7 @@ styles = StyleSheet.create({
 
 function mapStateToProps (state) {
   return {
-    appData: state.appData
+    appState: state
   }
 }
 function mapDispatchToProps(dispatch){

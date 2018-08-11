@@ -25,18 +25,18 @@ class Home extends React.Component {
             <TouchableOpacity 
             onPress={() => this.props.navigation.navigate('Login')}
 
-            style={{...styles.button, backgroundColor: 'black'}} >
+            style={{...styles.button, backgroundColor: '#363732'}} >
             <Text 
-              style={{...styles.buttonText, color: '#429a1b'}}
+              style={{...styles.buttonText, color: '#FCFCFC'}}
               >LOGIN</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('SignUp')}
-              style={{...styles.button, backgroundColor: '#429a1b'}}
+              style={{...styles.button, backgroundColor: '#7BD1AA'}}
               >
               <Text
               onPress={() => this.props.navigation.navigate('SignUp')}
-              style={{...styles.buttonText, color: 'black'}}
+              style={{...styles.buttonText, color: '#363732'}}
                 >SIGN UP</Text>
             </TouchableOpacity>
           </View>
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     flexDirection:'column',
     alignItems:'center',
     justifyContent:'center',
-    backgroundColor: '#000'
+    backgroundColor: '#FCFCFC'
   },
   
     button: {
