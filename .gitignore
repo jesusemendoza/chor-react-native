@@ -59,3 +59,8 @@ typings/
 
 # next.js build output
 .next
+
+# react native
+.DS_Store
+src/.DS_Store
+src/assets/.DS_Store
