@@ -8,6 +8,7 @@ import {
   TextInput,
     TouchableOpacity,
     FlatList,
+    ScrollView
 } 
    from 'react-native';
 import { testData } from './testData';
@@ -35,7 +36,7 @@ export default class Discover extends Component {
                     />
             </View>
         </View>
-        <View style={styles.leaderContainer}>
+        <ScrollView style={styles.leaderContainer}>
             {/* <Image source={require('../../assets/images/chor-logo.png')}/> */}
             <FlatList
                 data={testData}
@@ -46,7 +47,7 @@ export default class Discover extends Component {
                         <Text style={styles.listItem}>{item.score}</Text>
                     </View>)}
                 />
-        </View>
+        </ScrollView>
       </SafeAreaView>
     );
   }
@@ -56,13 +57,11 @@ styles = StyleSheet.create({
     container : {
         height: '100%',
         width: '100%',
-        display: 'flex',
-        flexDirection: 'column',
         backgroundColor: '#FCFCFC',
     },
     headerContainer : {
-        flex: 1,
         width: '100%',
+        height:'10%',
         paddingTop: 20,
         alignItems: 'center',
         display: 'flex',
@@ -85,9 +84,9 @@ styles = StyleSheet.create({
         borderRadius: 20,
     },
     trophyContainer : {
-        flex: 3,
         width: '100%',
-        paddingTop: 20,
+        height: '40%',
+        paddingTop: 30,
         display: 'flex',
         alignItems: 'center',
     },
@@ -103,23 +102,23 @@ styles = StyleSheet.create({
     },
     leaderContainer : {
         flex: 6,
-        paddingTop: 60,
+        paddingTop: 20,
         width: '100%',
         display: 'flex',
         flexDirection: 'column'
     },
     listContainer: {
-        flex: 1,
+        padding: 10,
         width: '100%',
-        backgroundColor: 'red',
-        paddingTop: 10,
-        paddingBottom: 10,
-        borderBottomColor: 'black',
+        marginBottom:2,
+        backgroundColor: '#7BD1AA',
+        borderRadius: 20,
         display: 'flex',
         flexDirection: 'row',
     },
     listItem: {
         flex:1,
+        padding: 3,
         fontSize: 26,
         textAlign: 'center',
     }
