@@ -6,9 +6,11 @@ import {
    View,
    Image,
   TextInput,
-    TouchableOpacity
+    TouchableOpacity,
+    FlatList,
 } 
    from 'react-native';
+import { testData } from './testData';
 
 let styles;    
 export default class Discover extends Component {
@@ -16,7 +18,14 @@ export default class Discover extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.headerContainer}>
-            <Text style={{fontSize: 25, textAlign: 'center', margin: 'auto'}}>Team Name</Text>
+            <Text style={styles.teamName}>Team Name</Text>
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity 
+                onPress={() => console.tron.log('Create New Chor')}
+                style={styles.button} >
+                    <Text style={styles.buttonText}>+ Chor</Text>
+                </TouchableOpacity>
+          </View>
         </View>
         <View style={styles.trophyContainer}>
             <View style={styles.imageContainer}>
@@ -27,7 +36,16 @@ export default class Discover extends Component {
             </View>
         </View>
         <View style={styles.leaderContainer}>
-            <Image source={require('../../assets/images/chor-logo.png')}/>
+            {/* <Image source={require('../../assets/images/chor-logo.png')}/> */}
+            <FlatList
+                data={testData}
+                renderItem={({item}) => (
+                    <View key={item.key} style={styles.listContainer}>
+                        <Text style={styles.listItem}>{item.place}</Text>
+                        <Text style={styles.listItem}>{item.name}</Text>
+                        <Text style={styles.listItem}>{item.score}</Text>
+                    </View>)}
+                />
         </View>
       </SafeAreaView>
     );
@@ -39,25 +57,43 @@ styles = StyleSheet.create({
         height: '100%',
         width: '100%',
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        backgroundColor: '#FCFCFC',
     },
     headerContainer : {
         flex: 1,
         width: '100%',
-        backgroundColor: 'red',
-        textAlign: 'center',
+        paddingTop: 20,
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'row',
+    },
+    teamName: {
+        flex: 1,
+        fontSize: 26,
+        paddingLeft: 15,
+    },
+    buttonContainer: {
+        flex: 1,
+        alignItems: 'center',
+    },
+    button: {
+        backgroundColor: '#EF5D60',
+        width: '70%',
+        padding: 10,
+        alignItems: 'center',
+        borderRadius: 20,
     },
     trophyContainer : {
         flex: 3,
         width: '100%',
-        backgroundColor: 'green',
+        paddingTop: 20,
         display: 'flex',
         alignItems: 'center',
     },
     imageContainer: {
         flex: 1,
         width: '60%',
-        backgroundColor: 'red',
         alignItems: 'center',
 
     },
@@ -67,8 +103,24 @@ styles = StyleSheet.create({
     },
     leaderContainer : {
         flex: 6,
+        paddingTop: 60,
         width: '100%',
-        backgroundColor: 'orange',
         display: 'flex',
+        flexDirection: 'column'
+    },
+    listContainer: {
+        flex: 1,
+        width: '100%',
+        backgroundColor: 'red',
+        paddingTop: 10,
+        paddingBottom: 10,
+        borderBottomColor: 'black',
+        display: 'flex',
+        flexDirection: 'row',
+    },
+    listItem: {
+        flex:1,
+        fontSize: 26,
+        textAlign: 'center',
     }
 })
