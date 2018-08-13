@@ -151,7 +151,9 @@ export const Root = createSwitchNavigator({
     Landing: LandingStack,
     MainApp: MainAppTabs, 
   }, {
-    initialRouteName: 'Landing',  
+    // initialRouteName: 'Landing', 
+    //set to main app for testing
+    initialRouteName: 'MainApp',
     mode: 'modal',
     headerMode: 'none',
   });
