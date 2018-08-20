@@ -63,7 +63,7 @@ export const MainAppTabs = createBottomTabNavigator({
       tabBarIcon:({ focused })=> {
         return (
         <Image
-        style={{ width: 19, height: 30 }}
+        style={{ width: 29, height: 40 }}
         source={(focused) ? require('../assets/images/chor-pressed.png') : require('../assets/images/chor-not-pressed.png')} />
       )},
     
@@ -76,8 +76,8 @@ export const MainAppTabs = createBottomTabNavigator({
       tabBarIcon:({ focused })=> {
         return (
         <Image
-        style={{ width: 26, height: 25 }}
-        source={(focused) ? require('../assets/tabbar-assets/search-tab-selected.png') : require('../assets/tabbar-assets/search-tab.png')} />
+        style={{ width: 55, height: 55 }}
+        source={(focused) ? require('../assets/images/search-pressed.png') : require('../assets/images/search.png')} />
       )},
       
     },
@@ -89,8 +89,8 @@ export const MainAppTabs = createBottomTabNavigator({
       tabBarIcon:({ focused })=> {
         return (
         <Image
-        style={{ width: 25, height: 25 }}
-        source={(focused) ? require('../assets/tabbar-assets/feed-tab-selected.png') : require('../assets/tabbar-assets/feed-tab.png')} />
+        style={{ width: 45, height: 45 }}
+        source={(focused) ? require('../assets/images/messages-pressed.png') : require('../assets/images/messages.png')} />
       )},
     
     },
@@ -115,8 +115,8 @@ export const MainAppTabs = createBottomTabNavigator({
       tabBarIcon:({ focused })=> {
         return (
         <Image
-        style={{ width: 22, height: 25 }}
-        source={(focused) ? require('../assets/tabbar-assets/my-music-tab-selected.png') : require('../assets/tabbar-assets/my-music-tab-selected.png')} />
+        style={{ width: 35, height: 45 }}
+        source={(focused) ? require('../assets/images/trophies-pressed.png') : require('../assets/images/trophies.png')} />
       )},
     
     },
