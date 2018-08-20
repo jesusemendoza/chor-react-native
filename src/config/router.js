@@ -72,12 +72,11 @@ export const MainAppTabs = createBottomTabNavigator({
   Search: {
     screen: Search,
     navigationOptions: {
-      tabBarLabel: 'Search',
       tabBarIcon:({ focused })=> {
         return (
         <Image
-        style={{ width: 26, height: 25 }}
-        source={(focused) ? require('../assets/tabbar-assets/search-tab-selected.png') : require('../assets/tabbar-assets/search-tab.png')} />
+        style={{ width: 50, height: 51 }}
+        source={(focused) ? require('../assets/images/search-pressed.png') : require('../assets/images/search.png')} />
       )},
       
     },
@@ -89,8 +88,8 @@ export const MainAppTabs = createBottomTabNavigator({
       tabBarIcon:({ focused })=> {
         return (
         <Image
-        style={{ width: 25, height: 25 }}
-        source={(focused) ? require('../assets/tabbar-assets/feed-tab-selected.png') : require('../assets/tabbar-assets/feed-tab.png')} />
+        style={{ width: 45, height: 45 }}
+        source={(focused) ? require('../assets/images/messages-pressed.png') : require('../assets/images/messages.png')} />
       )},
     
     },
@@ -102,8 +101,8 @@ export const MainAppTabs = createBottomTabNavigator({
       tabBarIcon:({ focused })=> {
         return (
         <Image
-        style={{ width: 18, height: 26 }}
-        source={(focused) ? require('../assets/images/chor-logo.png') : require('../assets/images/chor-logo.png')} />
+        style={{ width: 38, height: 46 }}
+        source={(focused) ? require('../assets/images/chor-logo.png') : require('../assets/images/chor-not-pressed.png')} />
       )},
      
     },
@@ -116,7 +115,7 @@ export const MainAppTabs = createBottomTabNavigator({
         return (
         <Image
         style={{ width: 22, height: 25 }}
-        source={(focused) ? require('../assets/tabbar-assets/my-music-tab-selected.png') : require('../assets/tabbar-assets/my-music-tab-selected.png')} />
+        source={(focused) ? require('../assets/images/chor-pressed.png') : require('../assets/images/chor-not-pressed.png')} />
       )},
     
     },

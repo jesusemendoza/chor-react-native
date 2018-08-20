@@ -51,7 +51,6 @@ class LoginForm extends Component {
       ?(<SafeAreaView><Text>Loading .....</Text></SafeAreaView>)  
       :(<SafeAreaView style={styles.LoginForm}>
         <View style={styles.LoginContentContainer}>
-          <Text style={styles.header}>Email</Text>
           <TextInput 
           style={styles.textInput} 
           autoCorrect={false} 
@@ -60,7 +59,6 @@ class LoginForm extends Component {
           onChangeText={(email) => this.setState({ email })}
           />
     
-          <Text style={styles.header}>Password</Text>
           <TextInput style={styles.textInput}
           placeholder="Password"
           returnKeyType="go"
@@ -90,36 +88,32 @@ const styles = StyleSheet.create({
     display: 'flex',
     height: '100%',
     backgroundColor: '#FCFCFC',
-    alignItems: 'center',
-
-    
+    alignItems: 'center', 
   },
   LoginContentContainer: {
-    padding: 30,
-    height: '50%',
+    height: '90%',
+    padding: 20,
     alignSelf: 'stretch',
     backgroundColor: '#FCFCFC'
   },
-  header: {
-    flex: 1,
-    fontSize: 12,
-    color: '#7bd1aa',
-    height:30,
-    paddingBottom:10
+  // header: {
+  //   fontSize: 18,
+  //   color: '#7bd1aa',
+  //   paddingBottom:10
 
-  },
+  // },
   textInput: {
     alignSelf: 'stretch',
+    height: 40,
     color: '#363732',
-    fontSize: 20
-    
+    fontSize: 18
   },
   buttonContainer: {
     width: '100%'
   },
   
   button: {
-    width: '60%',
+    width: '100%',
     alignSelf: 'stretch',
     alignItems: 'center',
     padding: 20,

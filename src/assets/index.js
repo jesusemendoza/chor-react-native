@@ -1,6 +1,6 @@
 //tab assets
-import discoverActive from './tabbar-assets/discover-tab-selected.png';
-import discover from './tabbar-assets/discover-tab.png';
+import discoverActive from './images/search-pressed.png';
+import discover from './images/search.png';
 
 export const tabAssets = {
   discover: discover,

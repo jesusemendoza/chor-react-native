@@ -21,7 +21,6 @@ export default class SignUpForm extends React.Component {
       <SafeAreaView style={styles.signUpForm}>
       <View style={styles.signUpContentContainer}>
         
-      <Text style={styles.header}>Name</Text>
       <TextInput 
       style={styles.textInput} 
       autoCorrect={false} 
@@ -29,7 +28,6 @@ export default class SignUpForm extends React.Component {
       placeholder="Name"
       />
 
-      <Text style={styles.header}>Primary Contact Email</Text>
       <TextInput 
       style={styles.textInput} 
       autoCorrect={false} 
@@ -37,7 +35,6 @@ export default class SignUpForm extends React.Component {
       placeholder="Email"
  />
 
-      <Text style={styles.header}>Password</Text>
       <TextInput 
       style={styles.textInput}
       placeholder="Password"
@@ -48,8 +45,6 @@ export default class SignUpForm extends React.Component {
       placeholder="Password"
       />
 
-      <Text 
-      style={styles.header}>Confirm Password</Text>
       <TextInput 
       style={styles.textInput}
       placeholder="Password"
@@ -60,11 +55,14 @@ export default class SignUpForm extends React.Component {
       />
 
       </View>
+      <View style={styles.buttonContainer}>
       <TouchableOpacity 
       onPress={() => this.props.navigation.navigate('MainApp')}
       style={styles.button}>
       <Text style={styles.buttonText}>SIGN UP</Text>
+  
       </TouchableOpacity>
+      </View>
         </SafeAreaView>
         </KeyboardAvoidingView>
 
@@ -77,37 +75,44 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     display: 'flex',
     height: '100%',
-    width: '100%',
     backgroundColor: '#FCFCFC',
     alignItems: 'center',
   },
   signUpContentContainer: {
-    height: '80%',
-    padding: 10,
+    height: '90%',
+    padding: 20,
     alignSelf: 'stretch',
+    backgroundColor: '#FCFCFC'
+
   },
-  header: {
-    fontSize: 10,
-    color: '#59B78D',
-    paddingTop: 20,
+  // header: {
+  //   fontSize: 18,
+  //   color: '#59B78D',
+  //   paddingTop: 10,
   
-  },
+  // },
   textInput: {
     alignSelf: 'stretch',
     height: 40,
     color: '#363732',
-    fontSize: 10,
+    fontSize: 18,
    
   },
+  buttonContainer: {
+    width: '100%'
+  },
+  
   button: {
-    position: 'absolute',
-    bottom: 0,
     width: '100%',
     alignSelf: 'stretch',
     alignItems: 'center',
     padding: 20,
     backgroundColor: '#59B78D',
-    marginTop: 100,
-    fontSize:20
+    marginTop: 40,
+    fontSize:25
+  },
+  buttonText: {
+    color: '#FCFCFC',
+    fontWeight: '700'
   }
 });
